@@ -1,4 +1,4 @@
-@import './variables'; 
+@import 'variables';
 
 .btn-primary {
   background-color: $primary-color;
@@ -9,6 +9,7 @@
   padding: 16px 0;
   font-weight: bold;
   font-size: 1.0em;
+  border-radius: 10px;
 }
                
 .btn-secondary {
@@ -19,4 +20,5 @@
   color: $primary-color;
   padding: 16px 0;
   font-weight: border;
+  border-radius: 10px;
 }
