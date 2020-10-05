@@ -17,6 +17,7 @@ $avatar-size: 32px;
   &_description {
     opacity: 0.4;
     margin-bottom: 16px;
+    word-break: break-all;
   }
 
   &_heart {

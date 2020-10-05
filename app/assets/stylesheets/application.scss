@@ -58,19 +58,15 @@ a {
 }
 
 .float_btn {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  width: 64px;
-  height: 64px;
-  border-radius: 100%;
-  text-align: center;
-  background-color: $primary-color;
-  color: white;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  display: flex;
+  padding: 80px;
+  background: #FFFFFF;
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 
-  i {
-    margin-top: 22px;
+  p {
+    text-align:center;  
+    margin:0 auto;
   }
 }
 
