@@ -13,9 +13,10 @@ $avatar-size: 32px;
     font-size: 20px;
     margin: 16px 0;
   }
-
+  
   &_description {
     opacity: 0.4;
+    margin-bottom: 16px;
   }
 
   &_heart {
@@ -36,7 +37,7 @@ $avatar-size: 32px;
   }
 
   &_detail {
-    padding-top: 12px;
+    padding: 12px 0;
     cursor: pointer;
     display: flex;
     font-size: 10px;
