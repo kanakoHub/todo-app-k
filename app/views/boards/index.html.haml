@@ -1,1 +1,4 @@
-%h2 All Boards
+.container
+  %h2 All Boards
+  - @boards.each do |board|
+    = render 'board', board: board

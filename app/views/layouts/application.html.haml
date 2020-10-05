@@ -8,6 +8,13 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    %header.header
+      .header_logos
+        - if !current_page?(root_path)
+          = link_to :back do
+            = image_tag 'back.svg', class: 'header_back'
+        %p.header_pageTitle
+          = link_to 'Boards', root_path  
     -# - if flash.present?
     -#   .flash
     -#     - flash.each do |key, value|
