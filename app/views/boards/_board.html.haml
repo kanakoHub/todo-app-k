@@ -2,7 +2,7 @@
   .card
     .card_content
       - if user_signed_in? && current_user.has_written?(board)
-        .board_detail_actions
+        %object.board_detail_actions
           .dropdown
             = image_tag 'actions.svg', class: 'dropbtn'
             .dropdown-content.mini
