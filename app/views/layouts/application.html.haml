@@ -22,7 +22,7 @@
             = link_to 'Profile', profile_path
             = link_to 'Log out', destroy_user_session_path, data: { method: 'delete' }
             -# = link_to 'お気に入り', favorites_path
-      - elsif !current_page?(new_user_session_path) && !current_page?(new_user_registration_path)
+      - elsif !current_page?(new_user_session_path)
         = link_to 'Log in', new_user_session_path, class: 'header_loginBtn'
       - else
     - if flash.present?
