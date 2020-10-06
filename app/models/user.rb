@@ -22,4 +22,8 @@ class User < ApplicationRecord
   def display_name
     profile&.nickname || self.email
   end
+
+  def has_written?(board)
+    boards.exists?(id: board.id)
+  end
 end

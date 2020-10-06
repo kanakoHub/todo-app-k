@@ -1,10 +1,16 @@
 -# = link_to article_path(id: article.id) do
 .card
   .card_content
+    - if user_signed_in? && current_user.has_written?(board)
+      .board_detail_actions
+        .dropdown
+          = image_tag 'actions.svg', class: 'dropbtn'
+          .dropdown-content.mini
+            = link_to 'Edit', edit_board_path(board)
+            = link_to 'Delete', board_path(board), data: { method: 'delete', confirm: 'Are you sure you want me to delete it?' }
     .card_name
       = board.name
     .card_description
       = board.description
     .card_detail
-      = image_tag 'default-avatar.png', class: 'header_avatar'
-      -# = image_tag board.user.avatar_image
+      = image_tag board.user.avatar_image
