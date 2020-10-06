@@ -38,10 +38,14 @@ class BoardsController < ApplicationController
         board.destroy!
         redirect_to root_path, notice: "I deleted it."
     end
+
+    def show
+        @board = Board.find(params[:id])
+        @tasks = @board.tasks
+    end
     
     private
     def board_params
-        # binding.pry
         params.require(:board).permit(:name, :description)
     end
 
