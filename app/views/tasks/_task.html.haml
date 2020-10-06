@@ -1,0 +1,19 @@
+-# = link_to board_task_path(id: task.id) do
+.card
+  .card_content
+    - if task.eyecatch.attached?
+      .board_image
+        = image_tag task.eyecatch
+    - if user_signed_in? && current_user.has_written_task?(task)
+      %object.board_detail_actions
+        .dropdown
+          = image_tag 'actions.svg', class: 'dropbtn'
+          .dropdown-content.mini
+            -# = link_to 'Edit', edit_board_path(task)
+            -# = link_to 'Delete', board_path(task), data: { method: 'delete', confirm: 'Are you sure you want me to delete it?' }
+    .card_name
+      = task.name
+    .card_description
+      = task.description
+    .card_detail
+      = image_tag task.user.avatar_image

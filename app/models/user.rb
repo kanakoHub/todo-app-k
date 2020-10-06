@@ -24,7 +24,11 @@ class User < ApplicationRecord
     profile&.nickname || self.email
   end
 
-  def has_written?(board)
+  def has_written_board?(board)
     boards.exists?(id: board.id)
+  end
+
+  def has_written_task?(task)
+    tasks.exists?(id: task.id)
   end
 end

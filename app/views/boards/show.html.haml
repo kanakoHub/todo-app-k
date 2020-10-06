@@ -1,5 +1,7 @@
-.board
+.container
   %h2 Tasks
   - @tasks.each do |task|
-    .board_comment
-      %p= task.name
+    = render 'tasks/task', task: task
+  -# = link_to new_board_task_path do
+  -#   .float_btn
+  -#     %p + Add new task 

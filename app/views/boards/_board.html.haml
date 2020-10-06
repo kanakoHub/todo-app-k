@@ -1,7 +1,7 @@
 = link_to board_path(id: board.id) do
   .card
     .card_content
-      - if user_signed_in? && current_user.has_written?(board)
+      - if user_signed_in? && current_user.has_written_board?(board)
         %object.board_detail_actions
           .dropdown
             = image_tag 'actions.svg', class: 'dropbtn'
