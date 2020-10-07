@@ -20,11 +20,11 @@ class TasksController < ApplicationController
       end
   end
 
-  # def destroy
-  #     board = current_user.boards.find(params[:id])
-  #     board.destroy!
-  #     redirect_to root_path, notice: "I deleted it."
-  # end
+  def destroy
+      task = current_user.tasks.find(params[:id])
+      task.destroy!
+      redirect_to board_path(task.board_id), notice: "I deleted it."
+  end
 
   private
   def task_params

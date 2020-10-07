@@ -5,7 +5,7 @@
         = image_tag 'actions.svg', class: 'dropbtn'
         .dropdown-content.mini
           = link_to 'Edit', edit_board_task_path(@task.board_id, @task.id)
-          -# = link_to 'Delete', board_path(task), data: { method: 'delete', confirm: 'Are you sure you want me to delete it?' }
+          = link_to 'Delete', board_task_path(@task.board_id, @task.id), data: { method: 'delete', confirm: 'Are you sure you want me to delete it?' }
   %h2=@task.name
   %p
     %span Closing:
