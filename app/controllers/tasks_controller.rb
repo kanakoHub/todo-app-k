@@ -1,15 +1,13 @@
 class TasksController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_task, only: [:edit, :update]
+  before_action :authenticate_user!, only: %i[new create edit update destroy]
+  before_action :set_task, only: %i[edit update]
 
   def show
     board = Board.find(params[:board_id])
     @task = board.tasks.find(params[:id])
   end
 
-  def edit
-
-  end
+  def edit; end
 
   def update
     if @task.update(task_params)
@@ -23,9 +21,9 @@ class TasksController < ApplicationController
   def destroy
     task = current_user.tasks.find(params[:id])
     task.destroy!
-    redirect_to board_path(task.board_id), notice: "I deleted it."
+    redirect_to board_path(task.board_id), notice: 'I deleted it.'
   end
-  
+
   def new
     @board = Board.find(params[:board_id])
     @task = @board.tasks.build(user_id: current_user.id)
@@ -44,6 +42,7 @@ class TasksController < ApplicationController
   end
 
   private
+
   def task_params
     params.require(:task).permit(:name, :description, :closing_day, :eyecatch).merge(user_id: current_user.id)
   end

@@ -16,9 +16,9 @@
 
 3.times do
   Task.create(
-      user_id: 1,
-      board_id: 7,
-      name: Faker::Lorem.sentence(word_count: 3),
-      description: Faker::Lorem.sentence(word_count: 50)
+    user_id: 1,
+    board_id: 7,
+    name: Faker::Lorem.sentence(word_count: 3),
+    description: Faker::Lorem.sentence(word_count: 50)
   )
 end
