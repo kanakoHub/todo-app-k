@@ -27,7 +27,6 @@ class TasksController < ApplicationController
   def new
     @board = Board.find(params[:board_id])
     @task = @board.tasks.build(user_id: current_user.id)
-    # binding.pry
   end
 
   def create
@@ -42,7 +41,6 @@ class TasksController < ApplicationController
   end
 
   private
-
   def task_params
     params.require(:task).permit(:name, :description, :closing_day, :eyecatch).merge(user_id: current_user.id)
   end
