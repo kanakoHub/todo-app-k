@@ -21,7 +21,6 @@
 @import 'flash';
 @import 'form';
 @import 'header';
-@import 'board';
 @import 'profile';
 
 html {
@@ -70,6 +69,10 @@ a {
     text-align:center;  
     margin:0 auto;
   }
+
+  &.comment{
+    padding: 30px;
+  }
 }
 
 h2 {
@@ -78,4 +81,5 @@ h2 {
 
 h1 {
   font-weight: normal;
+  margin: 32px 0;
 }
