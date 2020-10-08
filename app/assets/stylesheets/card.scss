@@ -1,6 +1,6 @@
 @import 'variables';
 
-$heart-size: 16px;
+$heart-size: 24px;
 $avatar-size: 32px;
 
 .card {
@@ -22,6 +22,10 @@ $avatar-size: 32px;
 
   &_heart {
     display: flex;
+    margin-top: 20px;
+    right: 60px;
+    position: absolute;
+    opacity: 0.4;
 
     img {
       width: $heart-size;
@@ -32,7 +36,7 @@ $avatar-size: 32px;
       margin-left: 8px;
       font-size: 12px;
       font-weight: bold;
-      color: $primary-color;
+      color: text-base-color;
       line-height: $heart-size;
     }
   }

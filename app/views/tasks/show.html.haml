@@ -1,4 +1,8 @@
 .container
+  .header_logos
+    = link_to board_path(@task.board_id) do
+      = image_tag 'back.png', class: 'header_back'
+    %p.header_pageTitle Task
   - if user_signed_in? && current_user.has_written_task?(@task)
     %object.card_detail_actions
       .dropdown
@@ -21,7 +25,7 @@
 
   - @comments.each do |comment|
     .card_comment
-      = image_tag @task.user.avatar_image
+      = image_tag comment.user.avatar_image
       %p= comment.comment
 
   = link_to new_board_task_comment_path(@task.board_id, @task.id) do

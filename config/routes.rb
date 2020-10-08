@@ -5,9 +5,11 @@ Rails.application.routes.draw do
 
   resources :boards do
     resources :tasks, only: %i[show edit update new create destroy] do
-      resources :comments, only: [:new, :create]
+      resources :comments, only: %i[new create]
     end
   end
 
   resource :profile, only: %i[show edit update]
+  resources :mytasks, only: [:index]
+  resources :myboards, only: [:index]
 end

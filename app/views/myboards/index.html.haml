@@ -1,0 +1,4 @@
+.container
+  %h2 My Boards
+  - @boards.each do |board|
+    = render 'commons/board', board: board
