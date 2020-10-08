@@ -1,4 +1,8 @@
 .container
+  .header_logos
+    = link_to board_path(@task.board_id) do
+      = image_tag 'back.png', class: 'header_back'
+    %p.header_pageTitle Task
   %h2 New Task
   %ul
     - @task.errors.full_messages.each do |message|
