@@ -18,3 +18,7 @@
     .card_content
       = @task.description
   %h1 Comment
+
+  = link_to new_board_task_comment_path(@task.board_id, @task.id) do
+    .float_btn
+      %p + Add new comment
