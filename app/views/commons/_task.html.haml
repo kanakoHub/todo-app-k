@@ -8,5 +8,8 @@
         = task.name
       .card_description
         = task.description
+      .card_heart
+        = image_tag 'Shape.png'
+        %span= task.comment_count
       .card_detail
         = image_tag task.user.avatar_image
