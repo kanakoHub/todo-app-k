@@ -1,0 +1,20 @@
+.container
+  - if user_signed_in? && current_user.has_written_task?(@task)
+    %object.board_detail_actions
+      .dropdown
+        = image_tag 'actions.svg', class: 'dropbtn'
+        .dropdown-content.mini
+          = link_to 'Edit', edit_board_task_path(@task.board_id, @task.id)
+          = link_to 'Delete', board_task_path(@task.board_id, @task.id), data: { method: 'delete', confirm: 'Are you sure you want me to delete it?' }
+  %h2=@task.name
+  %p
+    %span Closing:
+    = @task.closing_day
+  .card
+    - if @task.eyecatch.attached?
+      .board_image
+        = image_tag @task.eyecatch
+  .card  
+    .card_content
+      = @task.description
+  %h1 Comment

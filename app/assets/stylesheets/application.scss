@@ -22,6 +22,7 @@
 @import 'form';
 @import 'header';
 @import 'board';
+@import 'profile';
 
 html {
   word-spacing: 1px;
@@ -63,6 +64,7 @@ a {
   background: #FFFFFF;
   border: 1px dashed rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  margin: 32px 0;
 
   p {
     text-align:center;  
@@ -72,4 +74,8 @@ a {
 
 h2 {
   padding: 16px 0;
+}
+
+h1 {
+  font-weight: normal;
 }

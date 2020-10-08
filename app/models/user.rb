@@ -3,8 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
+
   has_many :boards, dependent: :destroy
+  has_many :tasks, dependent: :destroy
   has_one :profile, dependent: :destroy
 
   def prepare_profile
@@ -20,10 +21,14 @@ class User < ApplicationRecord
   end
 
   def display_name
-    profile&.nickname || self.email
+    profile&.nickname || email
   end
 
-  def has_written?(board)
+  def has_written_board?(board)
     boards.exists?(id: board.id)
+  end
+
+  def has_written_task?(task)
+    tasks.exists?(id: task.id)
   end
 end
