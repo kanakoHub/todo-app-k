@@ -21,7 +21,7 @@
 
   - @comments.each do |comment|
     .card_comment
-      = image_tag @task.user.avatar_image
+      = image_tag comment.user.avatar_image
       %p= comment.comment
 
   = link_to new_board_task_comment_path(@task.board_id, @task.id) do
