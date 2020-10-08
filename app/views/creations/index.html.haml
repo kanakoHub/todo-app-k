@@ -1,0 +1,4 @@
+.container
+  %h2 My Tasks
+  - @tasks.each do |task|
+    = render 'commons/task', task: task
