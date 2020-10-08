@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   end
 
   resource :profile, only: %i[show edit update]
-  resources :creations, only: [:index]
+  resources :mytasks, only: [:index]
 end
