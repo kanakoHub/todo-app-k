@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resource :profile, only: %i[show edit update]
+  resources :profiles, only: %i[show edit update]
   resources :mytasks, only: [:index]
   resources :myboards, only: [:index]
 end

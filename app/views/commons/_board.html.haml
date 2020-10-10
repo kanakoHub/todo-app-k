@@ -12,5 +12,6 @@
         = board.name
       .card_description
         = board.description
-      .card_detail
-        = image_tag board.user.avatar_image
+      %object.card_detail
+        = link_to  profile_path(id: board.user_id) do
+          = image_tag board.user.avatar_image
