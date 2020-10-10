@@ -11,5 +11,6 @@
       .card_heart
         = image_tag 'Shape.png'
         %span= task.comment_count
-      .card_detail
-        = image_tag task.user.avatar_image
+      %object.card_detail
+        = link_to  profile_path(id: task.user_id) do
+          = image_tag task.user.avatar_image

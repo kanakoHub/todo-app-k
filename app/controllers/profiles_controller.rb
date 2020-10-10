@@ -2,7 +2,8 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @profile = current_user.profile
+    @profile = Profile.find(params[:id])
+    # binding.pry
   end
 
   def edit
