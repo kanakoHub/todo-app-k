@@ -17,6 +17,11 @@
       = f.label :password_confirmation
       %br/
       = f.password_field :password_confirmation, autocomplete: "new-password", class: 'text'
+    = f.fields_for :profile do |f|
+      %div
+        = f.label :nickname, 'NickName'
+      %div
+        = f.text_field :nickname, class: 'text'
     .actions
       = f.submit "Sign up", class: 'btn-primary'
   = render "devise/shared/links"

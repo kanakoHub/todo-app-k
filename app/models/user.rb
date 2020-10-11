@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :tasks, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_one :profile, dependent: :destroy
+  accepts_nested_attributes_for :profile
 
   def prepare_profile
     profile || build_profile
